@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Карцева/МДК 05.02. 15.09.2025.md",
+                "file": "Карцева/МДК 09.02.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "МДК 05.02. 15.09.2025"
+              "title": "МДК 09.02"
             }
           }
         ]
@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Файловый менеджер"
+              "title": "Files"
             }
           },
           {
@@ -157,8 +157,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
         ]
@@ -170,23 +170,23 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Меню быстрого перехода": false,
-      "graph:Граф": false,
-      "canvas:Создать новый холст": false,
-      "daily-notes:Сегодняшняя заметка": false,
-      "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false,
-      "bases:Создать новую базу": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
       "templater-obsidian:Templater": false,
-      "obsidian-kanban:Создать новую доску": false,
+      "obsidian-kanban:Create new board": false,
       "smart-random-note:Open Random Note from Search": false
     }
   },
   "active": "68bc8d70c4c8fa56",
   "lastOpenFiles": [
+    "Карцева/МДК 05.02. 15.09.2025.md",
     "Карцева/МДК 09.02.md",
     "Карцева/МДК 05.01 05.09.2025.md",
-    "Карцева/МДК 05.02. 15.09.2025.md",
     "Для курсача.md",
     "Карцева.zip",
     "Карцева.zip.78rx4j.part",
