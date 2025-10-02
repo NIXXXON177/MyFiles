@@ -3,7 +3,7 @@ import './App.css'
 import { generate as randomWords } from 'random-words';
 import ComponentClass from "./components/ComponentClass/ComponentClass"
 import PureComponentClass from "./components/PureComponentClass/PureComponentClass"
-import ComponentFunc from "./components/ComponentFunc/ComponentFunc"
+import ComponentFunc from "./components/ComponentFunc"
 
 export default class App extends React.Component {
   state = {
@@ -25,6 +25,7 @@ export default class App extends React.Component {
           count: this.state.count + 1,
           str: randomWords(),
           pure: randomWords(),
+          func: randomWords(),
         })
       }
     }, 3000)

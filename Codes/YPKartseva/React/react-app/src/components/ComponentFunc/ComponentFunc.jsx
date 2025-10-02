@@ -1,8 +1,9 @@
 import React from 'react'
+import style from './style.module.css'
 
- const ComponentFunc = (props) => {
+export const ComponentFunc = React.memo((props) => {
     console.log('----------')
-    console.log('PureComponentClass')
-    return <p>{props.string}</p>   
-    }
+    console.warn('ComponentFunc')
+    return <p className={style.text}>{props.string}</p>   
+})
 export default ComponentFunc;
