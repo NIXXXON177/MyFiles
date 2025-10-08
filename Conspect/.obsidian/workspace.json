@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "МДК 09.01 Laravel Конспект.md",
+                "file": "Arch Linux/XAMPP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "МДК 09.01 Laravel Конспект"
+              "title": "XAMPP"
             }
           }
         ],
@@ -199,21 +199,22 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templater-obsidian:Templater": false,
+      "obsidian-kanban:Create new board": false,
+      "smart-random-note:Open Random Note from Search": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-kanban:Create new board": false,
-      "smart-random-note:Open Random Note from Search": false
+      "bases:Create new base": false
     }
   },
   "active": "569f49cd1609a0fd",
   "lastOpenFiles": [
     "МДК 09.01 PHP Конспект.md",
+    "Untitled.canvas",
     "МДК 09.01 Laravel Конспект.md",
     "Шилина/МДК 09.03 09.09.2025.md",
     "Карцева/МДК 05.02. 15.09.2025.md",
