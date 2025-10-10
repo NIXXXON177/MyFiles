@@ -13,7 +13,7 @@ export const Header = props => {
 					<Logo />
 					<Heading text='Главная' />
 					<Search />
-					<Auth auth={false} />
+					<Auth auth='Никола' />
 				</div>
 			</Layout>
 		</header>
