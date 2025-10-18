@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мои курсы — Повышение квалификации</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Повышение квалификации</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="courses.html" class="nav-link active">Мои курсы</a>
+        <a href="plan.html" class="nav-link">План обучения</a>
+        <a href="#" class="nav-link">Настройки</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h2 class="page-title">Мои курсы</h2>
+
+      <!-- Панель управления -->
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Поиск по названию..." class="search-input" />
+        <select id="filterStatus" class="filter-select">
+          <option value="all">Все статусы</option>
+          <option value="назначен">Назначен</option>
+          <option value="в процессе">В процессе</option>
+          <option value="пройден">Пройден</option>
+        </select>
+      </div>
+
+      <!-- Список курсов -->
+      <div id="coursesList" class="courses-list">
+        <!-- Курсы будут добавлены через JavaScript -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 ООО «ТехноЛайн Консалтинг»</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
