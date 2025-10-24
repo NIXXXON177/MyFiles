@@ -134,7 +134,11 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    text-align: center;
+}
+
+.nav-logo a {
+    text-decoration: none;
 }
 
 .logo-img {
