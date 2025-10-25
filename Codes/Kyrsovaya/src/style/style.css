@@ -721,6 +721,10 @@ body {
     transition: all 0.3s ease;
 }
 
+.filter-select option {
+    background: var(--primary-dark);
+}
+
 .search-input {
     min-width: 240px;
 }
@@ -730,6 +734,16 @@ body {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(0, 89, 255, 0.2);
     background: rgba(255, 255, 255, 0.08);
+}
+.filters .btn {
+    height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    white-space: nowrap;
+    min-width: 140px;
 }
 
 /* Анимации */

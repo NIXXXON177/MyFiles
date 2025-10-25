@@ -12,9 +12,11 @@ class FilterManager {
     }
 
     init() {
+        
         this.loadCourses();
         this.setupEventListeners();
         this.applyFilters();
+        
     }
 
     loadCourses() {
