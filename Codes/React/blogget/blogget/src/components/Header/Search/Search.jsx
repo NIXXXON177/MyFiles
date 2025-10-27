@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Search.module.css';
 
-export const Search = props => {
+export const Search = () => {
   return (
 		<form className={style.form}>
 			<input className={style.search} type='search' />

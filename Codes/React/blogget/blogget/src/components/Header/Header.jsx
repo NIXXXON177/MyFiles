@@ -5,7 +5,7 @@ import Logo from './Logo';
 import Heading from './Heading';
 import Search from './Search';
 import Auth from './Auth';
-export const Header = props => {
+export const Header = () => {
 	return (
 		<header className={style.header}>
 			<Layout>
