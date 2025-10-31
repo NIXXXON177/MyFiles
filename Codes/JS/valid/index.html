@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валидация номера</title>
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        font-size: 64px;
+    }
+    button {
+        border: none;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 10px 20px 10px 20px;
+        font-size: 50px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        transition: 0.5s all ease-in-out;
+    }
+
+    button:hover{
+        font-size: 60px;
+        border-radius: 100px;
+        border: 10px solid gray
+    }
+</style>
+<body>
+    <form action="POST">
+        <input type="tel" name="phone" id="num" placeholder="+X(XXX)-XXX-XX-XX" maxlength="18">
+        <button type="submit">Войти</button>
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html>
