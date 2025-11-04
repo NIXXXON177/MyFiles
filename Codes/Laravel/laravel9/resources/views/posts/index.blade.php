@@ -3,10 +3,10 @@
 @section('content')
     @if(request('search'))
         @if($posts->count() > 0)
-            <h2>Результаты поиска по запросу <b>{{ request('search') }}</b></h2>
+            <h2>Результаты поиска по запросу "<b>{{ request('search') }}</b>"</h2>
             <p class="lead">Всего найдено {{ $posts->count() }} поста(ов)</p>
         @else
-            <h2>По запросу <b>{{ request('search') }}</b> ничего не найдено</h2>
+            <h2>По запросу "<b><?=htmlspecialchars($_GET['search'])?></b>" ничего не найдено</h2>
             <a href="{{ route('post.index') }}" class="btn btn-primary">Отобразить все посты</a>
         @endif
     @endif

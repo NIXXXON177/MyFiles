@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -39,6 +40,8 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -68,5 +71,18 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\RedirectResponse|null
+     */
+    protected function registered(Request $request, $user)
+    {
+        return redirect($this->redirectTo)
+            ->with('success', 'Вы успешно зарегистрированы');
     }
 }

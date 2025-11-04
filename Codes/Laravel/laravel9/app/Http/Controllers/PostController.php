@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 
 class PostController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth')->except('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -60,7 +65,8 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->short_title = Str::length($request->title) > 30 ? Str::substr($request->title, 0, 30) . '...' : $request->title;
         $post->descr = $request->descr;
-        $post->author_id = rand(1,4);
+        $post->author_id = Auth::user()->id;
+
         if($request->file('img')) {
             $path = Storage::putFile('public', $request->file('img'));
             $url = Storage::url($path);
@@ -80,9 +86,12 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::join('users', 'posts.author_id', '=', 'users.id')
-            ->select('posts.*', 'users.name as author_name')
-            ->where('posts.post_id', $id)
-            ->firstOrFail();
+            ->find($id);
+
+        if (!$post){
+            return redirect()->route('post.index')->withErrors('Ты куда-то не туда пытался зайти');
+        }
+
         return view('posts.show', compact('post'));
     }
 
@@ -95,6 +104,11 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+
+        if ($post->author_id != Auth::user()->id){
+            return redirect()->route('post.index')->withErrors('Вы не можете редактировать данный пост');
+        }
+
         return view('posts.edit', compact('post'));
     }
 
@@ -108,6 +122,10 @@ class PostController extends Controller
     public function update(PostRequest $request, $id)
     {
         $post = Post::find($id);
+
+        if ($post->author_id != Auth::user()->id){
+            return redirect()->route('post.index')->withErrors('Вы не можете редактировать данный пост');
+        }
         $post->title = $request->title;
         $post->short_title = Str::length($request->title) > 30 ? Str::substr($request->title, 0, 30) . '...' : $request->title;
         $post->descr = $request->descr;
@@ -131,6 +149,15 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+
+        if (!$post){
+            return redirect()->route('post.index')->withErrors('Ты куда-то не туда пытался зайти');
+        }
+
+        if ($post->author_id != Auth::user()->id){
+            return redirect()->route('post.index')->withErrors('Вы не можете редактировать данный пост');
+        }
+
         $post->delete();
         return redirect()->route('post.index')->with('success', 'Пост успешно удален!');
     }
