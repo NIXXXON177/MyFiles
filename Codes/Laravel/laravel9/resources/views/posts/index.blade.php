@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layout', ['title' => 'Главная страница'])
 
 @section('content')
     @if(request('search'))
@@ -16,17 +16,15 @@
             <div class="card">
                 <div class="card-header"><h2>{{ $post->short_title }}</h2></div>
                 <div class="card-body">
-                    <div class="card-img" style="background-image: url('{{ $post->post_img ?? asset('img/image.png') }}')"></div>
+                    <div class="card-img" style="background-image: url('{{ $post->img ?? asset('img/image.png') }}')"></div>
                     <div class="card-author">Автор: <b>{{ $post->author_name }}</b></div>
-                    <a href="" class="btn btn-outline-primary">Посмотреть пост</a>
+                    <a href="{{ route('post.show', ['post' => $post->post_id]) }}" class="btn btn-outline-primary">Посмотреть пост</a>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 
-    @if(!isset($_GET['search']))
-    {{ $posts->links() }}
-    @endif
+    {{ $posts->appends(request()->query())->links() }}
 @endsection
 
