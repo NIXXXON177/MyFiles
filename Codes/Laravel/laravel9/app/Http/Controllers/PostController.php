@@ -86,9 +86,11 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::join('users', 'posts.author_id', '=', 'users.id')
-            ->find($id);
+            ->select('posts.*', 'users.name as author_name')
+            ->where('posts.post_id', $id)
+            ->first();
 
-        if (!$post){
+        if (!$post) {
             return redirect()->route('post.index')->withErrors('Ты куда-то не туда пытался зайти');
         }
 
