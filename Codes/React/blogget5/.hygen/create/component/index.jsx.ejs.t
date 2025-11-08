@@ -1,6 +1,10 @@
 ---
-to: <%= absPath %>/index.jsx
+to: <%= absPath %>/index.js
 ---
-import {<%= component_name %>} from './<%= component_name %>';
+<% if (base_dir === 'UI') { -%>
+export * from './<%= component_name %>'
+<% } else { -%>
+import {<%= component_name %>} from './<%= component_name %>'
 
-export default <%= component_name %>;
+export default <%= component_name %>
+<% } -%>
