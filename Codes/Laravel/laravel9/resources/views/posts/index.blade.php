@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header"><h2>{{ $post->short_title }}</h2></div>
                 <div class="card-body">
-                    <div class="card-img" style="background-image: url('{{ $post->img ? asset("storage/img/" . $post->img) : asset("img/image.png") }}')"></div>
+                    <div class="card-img" style="background-image: url('{{ $post->img ? asset($post->img) : asset('img/image.png') }}')"></div>
                     <div class="card-author">Автор: <b>{{ $post->author_name }}</b></div>
                     <a href="{{ route('post.show', ['post' => $post->post_id]) }}" class="btn btn-outline-primary">Посмотреть пост</a>
                 </div>
