@@ -1,4 +1,6 @@
 {
   "theme": "obsidian",
-  "accentColor": "#ff0505"
+  "accentColor": "#15770e",
+  "baseFontSize": 20,
+  "showRibbon": false
 }
