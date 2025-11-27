@@ -1,3 +1,4 @@
+@extends('layouts.layout')
 @section('form')
 <form action="POST">
     @csrf
