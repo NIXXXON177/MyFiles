@@ -13,5 +13,6 @@ return [
     'footer' => '© 2025 Nikola. All rights reserved.',
     'altlogo' => 'Logo',
     'logotext' => 'KavoDeda',
+    'street' => 'Pushkin Street, Kolotushkina Village'
 ]
 ?>
